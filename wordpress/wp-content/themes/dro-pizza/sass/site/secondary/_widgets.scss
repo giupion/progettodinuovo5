@@ -1,0 +1,118 @@
+aside.widget-area{
+    padding: 5px;
+    .widget {
+        margin: 0 0 1.5em;
+        border: 1px solid #1e1e1e;
+        background-color: #000000;
+        padding: 5px 10px;
+        a{
+            color: #cacaca;
+            display: inline-block;
+            min-height: 45px;
+            &:hover{
+                color: #fff;
+            }
+        }        
+        img{
+            /*max-width: 40%;*/
+        }
+        .widget-title{
+            font-size: 1.5rem;
+            margin: 0 0 2rem;
+            font-family: "Roboto-Regular";
+            color: $color__text-widget-title;
+            display: inline-block;
+            a{
+                color: #fff;
+            }
+        }
+        ol{
+            /*border: 1px solid ;*/
+            list-style-type: none;
+            margin: -1em 0 0;
+            padding:0;
+        }
+        ul{
+            /*border: 1px solid ;*/
+            list-style-type: none;
+            margin: -1em 0 0;
+            padding:0;
+        }
+        li{
+            /*border: 1px solid #f0f;*/
+            font-family: "Roboto-Regular";
+            font-size: 0.9rem;
+            ul, ol {
+                margin-top: 0 ;
+            }
+        }        
+        /* Make sure select elements fit in widgets. */
+        select {
+            max-width: 100%;
+        }
+    } /* .widget */
+    .widget_calendar{
+        min-width: 100%;
+        a{
+            color: #4e6276;
+            font-weight: bold;
+            min-height: auto;
+        }
+    }/* .widget_calendar*/
+    .widget_pages , .widget_nav_menu{
+        a{
+            padding: 1em 0;
+            border-bottom: 1px solid #888;
+            display: block;
+        }
+    }
+    .widget_rss{
+        li{
+            a{
+                &::after{
+                    content: "\f3d3";
+                    display: block;
+                    font-family: "Ionicons";
+                    margin: 0 0 0 5px;
+                    background: #1e1e1e;
+                    color: #ddd;
+                    padding: 0;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    $widgets : (
+        "archive":"\f134",
+        "tag_cloud":"\f377",
+        "categories":"\f26c", 
+        "search":"\f4a5", 
+        "calendar":"\f3f4",
+        "recent_comments":"\f11e",
+        "text":"\f12e", 
+        "nav_menu":"\f394", 
+        "recent_entries":"\f37e", 
+        "meta":"\f48d",
+        "pages":"\f381") ;
+
+    @each $widget , $glyph in $widgets{
+        .widget_#{$widget}{
+            @include sidebar-title-icon($glyph);
+        }
+    }
+    .wp-caption .wp-caption-text{
+        padding: 0.8075em 1em;
+        font-size: 14px;
+        font-size: .9rem;
+        font-family: sans-serif;
+        /* background: #e5e5e5; */
+        background: hsla(0, 0%, 90%, 0.2);
+    }
+    .widget_rss .rss-date, .widget_rss cite {
+        display: block;
+        font-size: 85%;
+    }
+}

@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Accent Orange",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#f97316",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#64748B",
+					"name": "Mono 2",
+					"slug": "mono-2"
+				},
+				{
+					"color": "#FFFFFF",
+					"name": "Contrast Light",
+					"slug": "contrast-light"
+				},
+				{
+					"color": "#000000",
+					"name": "Contrast Dark",
+					"slug": "contrast-dark"
+				},
+				{
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#0f172a",
+					"name": "Mono 1",
+					"slug": "mono-1"
+				},
+				{
+					"color": "#e2e8f0",
+					"name": "Mono 3",
+					"slug": "mono-3"
+				},
+				{
+					"color": "#f8fafc",
+					"name": "Mono 4",
+					"slug": "mono-4"
+				},
+				{
+					"color": "#ea580c",
+					"name": "Primary Hover",
+					"slug": "primary-hover"
+				}
+			]
+		}
+	}
+}

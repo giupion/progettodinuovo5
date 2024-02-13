@@ -1,0 +1,71 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+.blured{
+    filter: blur(5px);
+}
+.loading-container{
+    position: fixed;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    background-color: rgb(255, 255, 255);   
+
+    .pre-loading{
+        background-image: url(assets/images/dro-pizza-loader.gif);
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: table-cell;
+        @media screen and (min-width:992px){
+            background-image: url(assets/images/dro-pizza-loader.gif);    
+        }
+    }
+}
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+    display: inline-block;
+    max-width: 150px;
+    height: auto;
+    position: absolute;
+    left: 20%;
+    top: 0;
+    z-index: 4;
+    transition: all 1s;
+    @media screen and (min-width: 992px){
+        left:20px;
+    }
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+/*@import "captions";*/
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+@import "galleries";
+
+/*--------------------------------------------------------------
+## Video
+--------------------------------------------------------------*/
+/*@import "video";*/
+
+/*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+/*@import "buttons";*/

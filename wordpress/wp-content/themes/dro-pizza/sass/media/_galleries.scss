@@ -1,0 +1,66 @@
+ul.wp-block-gallery.alignleft.columns-2{
+    display: flex!important; 
+}
+div.wp-block-cover.has-background-dim{
+    height: auto!important;
+}
+figure.wp-block-audio{
+    audio{
+        min-width: 100%;
+    }
+}
+.gallery {
+    margin-bottom: 1.5em;
+}
+
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+
+    // Loops to enumerate the classes for gallery columns.
+    @for $i from 2 through 9 {
+        .gallery-columns-#{$i} & {
+            max-width: map-get( $columns, $i );
+        }
+    }
+}
+
+.gallery-caption {
+    display: block;
+    font-size: .7rem;
+}
+span.toggleCaption {
+    color: $color__entry-meta-link;
+    font-family: "Ionicons";
+    display: inline-block;
+    background-color: $color__background-open-meta-tags;
+    width: 100%;
+    /* margin: 0 auto; */
+    height: 45px;
+    cursor: pointer;
+    line-height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 10px;
+    i{
+        font-style: normal;
+        &.toggleCaption-plus{
+            font-style: normal;
+            &::before{
+                font-family: "Ionicons";
+                content: "\f3d0";
+            }
+        }
+        &.toggleCaption-minus{
+            &::before{
+                font-family: "Ionicons";
+                content: "\f3d8";
+            } 
+        }
+    }
+
+
+}

@@ -1,0 +1,191 @@
+.main-navigation {
+    clear: both;
+    display: none;
+    background-color: #997408;
+    background: linear-gradient(to right,#ff8a00,#da1b60);
+    z-index: 3;        
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+
+        ul {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+            top: 100%;
+            left: -999em;
+            z-index: 99999;
+            background-color: #E9B316;
+
+            ul {
+                left: -999em;
+                top: 0;
+            }
+
+            li {
+                &:hover > ul,
+                    &.focus > ul {
+                    left: 100%;
+                }
+            }
+            a{
+                width: 150px;
+                margin-right: 0;
+            }
+            li.page_item_has_children,
+            li.menu-item-has-children{
+                >a {
+                    &:after{
+                        @include after-menu-has-children("\f3d1");
+                    }
+                }
+            }
+
+            :hover > a,
+                .focus > a {
+            }
+
+            a:hover,
+                a.focus {
+            }
+        }
+
+        li:hover > ul,
+            li.focus > ul {
+            left: auto;
+        }
+    }
+
+    li {
+        float: left;
+        position: relative;
+
+        &:hover > a,
+            &.focus > a {
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        margin-right: 5px;
+        font-size: .8em;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-family: $font_main-menu;
+        font-weight:400;
+        &:hover{
+            background-color: #FF8A00;
+            color: #fff;
+        }
+    }
+    ul.nav-menu > li.page_item_has_children ,
+    ul.nav-menu > li.menu-item-has-children{
+        > a:after{
+            @include after-menu-has-children("\f3d0");
+        }
+    }
+    li.current_page_item{
+        > a{
+            background-color: #f9bb08;
+            color: #fff;
+        }
+    }
+
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
+    }
+    @media screen and (min-width: 992px){
+        display: block;
+        min-height: 45px;
+        margin: 0 auto;
+        position: absolute;
+        top: 20px;
+        right: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 45px;        
+    }
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+    display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+    .site-main & {
+        margin: 0 0 1.5em;
+        overflow: hidden;
+    }
+
+    .nav-previous {
+        float: left;
+        width: 50%;
+    }
+
+    .nav-next {
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
+}
+nav.pagination{
+    width: 100%;
+    padding: 5px;
+    display:block;
+    text-align: center;
+    .nav-links{
+        padding: 10px;
+        .prev.page-numbers{
+            @include pagination-home-archive();
+        }
+        .next.page-numbers{
+            @include pagination-home-archive();
+        }
+        .page-numbers{
+            @include pagination-home-archive();
+        }
+        .page-numbers.current{
+            @include pagination-home-archive(#0b0b0b  , #fff);
+        }
+        .prev.page-numbers,
+        .next.page-numbers,
+        .page-numbers{
+            &:hover{
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
+    }
+}
+.site-main .comment-navigation, 
+.site-main .post-navigation{
+    margin: 0 0 1.5em;
+    overflow: hidden;
+    margin: 0 0 1.5em;
+    overflow: hidden;
+    padding-bottom: 10px;
+    width: 100%;
+    @include navigation-posts();
+    
+    @media screen and (min-width:992px){
+        
+    }
+}

@@ -1,0 +1,66 @@
+div.site-branding{
+    background: radial-gradient(circle at top right, #000000, #211d18);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    z-index:1;
+    min-height:250px;
+    border-bottom-right-radius:80px;
+
+    h1.site-title{
+        position: absolute;
+        left: 10px;
+        font-size: 1em;
+        bottom: 0px;
+        max-width: 60%; 
+        a{
+            background: linear-gradient(to right, $color__background-site-title-start 3%, $color__background-site-title-end 120%);
+            /*color: #fff;*/
+            padding: 12px;
+            transform: skewX(-10deg);
+            box-shadow: -2px 3px 9px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            border-radius: 10px;
+            &:hover{
+                background: linear-gradient(to right, $color__background-site-title-start 3%, $color__background-site-title-start 120%);
+                text-decoration: none;
+                color: #f1f1f1;
+            }
+        }
+        
+    }
+    div.site-description-container{
+        position: absolute;
+        top: 120px;
+        width: 100%;
+        margin: 0 auto;        
+    }
+    P.site-description{
+        background-color: rgba(6, 6, 6, 0.8);
+        /*color: #fff;*/
+        width: 90%;
+        text-align: center;
+        font-size: .8em;
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 10px;
+        transform: all .5s;
+        @media screen and (min-width: 768px){
+            font-size: 1em;
+        }
+    }
+    @media screen and (min-width: 768px){
+        background-position: left center;
+        /*min-height:350px;*/
+        h1.site-title{
+            font-size: 1.5em;
+        }
+    }
+}
+.site-title a,
+.site-description{
+    color: #fff;
+}

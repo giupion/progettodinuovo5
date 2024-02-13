@@ -1,0 +1,186 @@
+.sticky {
+    display: block;
+}
+
+.post,
+.page {
+    margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+    display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 auto;
+    background-color: #101213;
+    display: block;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 50%;  
+    span{
+        display: block;
+        @media screen and (min-width: 768px){
+            display: inline-block;
+        }
+    }
+    a{
+        color: #ddd;
+        background-color: #1e1e1e;
+        display: block;
+        padding: 5px 10px;
+        text-align: center;
+        margin-top: 5px;
+        &:hover{
+            background-color: #19191a;
+            color: #9b9a9a;
+        }
+        @media screen and (min-width: 768px){
+            display: inline-block;
+            margin-top: 0;
+        }
+    }
+    @media screen and (min-width: 768px){
+        display:inline-block;
+        width:auto;
+    }
+}
+.entry-title{
+    text-align: center;
+    @media screen and (min-width: 992px){
+        text-align:left;
+    }
+}
+div.entry-meta{
+    font-size:.8rem;
+    span.posted-on{
+        a{
+            color: $color__entry-meta-link;
+            &:before{
+                @include entry-meta("\f3f3");
+            }
+
+        }
+    }
+    span.byline{
+        span.author{
+            a{
+                color: $color__entry-meta-link;
+                &:before{
+                    @include entry-meta("\f3a0");
+                }
+            }
+
+        }
+
+    }
+}
+
+body.home article.active{
+    height: auto;
+}
+/**
+* Home & Archive
+*/
+body.home article,
+body.archive article{
+    background-color: $color__background-article;
+    min-height: 300px;
+    padding: 10px 10px 0 10px;
+    position: relative;
+
+    @media screen and (min-width: 992px){
+        min-height: 320px;
+    }
+    .bg-image{
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .bg-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color__background-overlay;
+    }
+    header.entry-header{
+        position:relative;
+        h2.entry-title{
+            font-size: 1.1rem;
+            color: $color__text-entry-header;
+            -ms-word-wrap: break-word;
+            word-break: break-word;
+            a {
+                color:$color__text-entry-header-link;
+                letter-spacing: 0.6px;
+                &:hover{
+                    text-decoration: none;
+                    color: $color__text-entry-header-link-hover;
+                }
+            }
+            @media screen and (min-width:768px){
+                font-size:1.5rem;
+            }
+        }/* .entry-title */
+    }
+    .entry-content{
+        font-size: .8rem;
+        position: relative;
+        @media screen and (min-width: 992px){
+            font-size:1rem;
+        }
+    }
+    footer.entry-footer.open{
+        position: relative;
+    }
+    @include entry-footer('home-archive');
+
+}
+
+$archives: ( "category":"\f26c" , "author":"\f47e","tag":"\f377" , "date":"\f3f4");
+
+@each $archive, $glyph in $archives{
+    body.#{$archive} {
+        @include archive-page-title-icon($glyph);
+    }
+}
+
+/**
+* Single
+*/
+body.single{
+    article{
+        header.entry-header{
+            @media screen and (min-width: 992px){
+                border-right: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                height: min-content;  
+            }
+
+            h1.entry-title{
+                font-size: 1.5rem;
+                text-align: center;
+                word-break: break-all;
+                @media screen and (min-width: 992px){
+                    text-align:left;
+                }
+            }
+        }
+        @include entry-footer('single');
+    }
+}
