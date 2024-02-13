@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "simple-blog-card/simpleblogcard-block",
+  "title": "Simple Blog Card",
+  "category": "widgets",
+  "icon": "share-alt2",
+  "description": "Get OGP and display blog card.",
+  "keywords": [
+	"blogcard",
+	"card",
+	"external link",
+	"internal link",
+	"linkcard"
+  ],
+  "version": "1.0.6",
+  "textdomain": "simple-blog-card",
+  "supports": {
+    "customClassName": false,
+    "className": false,
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
